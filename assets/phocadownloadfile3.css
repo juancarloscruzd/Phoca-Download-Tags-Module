@@ -1,0 +1,17 @@
+.pd-mf-title {
+	font-weight:bold;
+}
+.pd-mf-box {
+	margin-top:5px;
+}
+
+.pd-mf-date16 {
+	padding-left:20px;
+	background: url('images/icon-date.png') 0px center no-repeat;
+	height:16px;
+    line-height:16px;
+}
+.pd-mf-desc {
+	color:#777;
+	padding-left: 20px;
+}

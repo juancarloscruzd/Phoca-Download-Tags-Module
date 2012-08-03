@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.7.0" client="site" method="upgrade">
+	<name>MOD_PHOCADOWNLOAD_FILE</name>
+	<author>Jan Pavelka (www.phoca.cz)</author>
+	<creationDate>22/11/2011</creationDate>
+	<copyright>Jan Pavelka</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail></authorEmail>
+	<authorUrl>www.phoca.cz</authorUrl>
+	<version>2.1.4</version>
+	<description>MOD_PHOCADOWNLOAD_FILE_DESCRIPTION</description>
+
+	<files>
+		<filename module="mod_phocadownload_tag_file">mod_phocadownload_tag_file.php</filename>
+		<filename>index.html</filename>
+        <folder>assets</folder>
+		<folder>tmpl</folder>
+		<folder>models</folder>
+	</files>
+
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_phocadownload_tag_file.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_phocadownload_tag_file.sys.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_phocadownload_tag_file/models/fields">
+		<fieldset name="basic">
+
+            <field name="phocahead1" type="phocahead" default="MOD_PHOCADOWNLOAD_FILE_CONFIG_GENERAL_SETTINGS_LABEL" label="" description=""/>
+
+            <field name="module_type" type="list" default="0" label="MOD_PHOCADOWNLOAD_FILE_FIELD_MODULE_TYPE_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_MODULE_TYPE_DESC">
+                <option value="0">MOD_PHOCADOWNLOAD_FILE_FIELD_MODULE_TYPE_OPTION_LIST</option>
+                <option value="1">MOD_PHOCADOWNLOAD_FILE_FIELD_MODULE_TYPE_OPTION_RSS</option>
+                <option value="2">MOD_PHOCADOWNLOAD_FILE_FIELD_MODULE_TYPE_OPTION_LIST_AND_RSS</option>
+            </field>
+
+ <!-- 
+            <field name="category_ids" type="PhocaDownloadCategoryModule" default="0" label="MOD_PHOCADOWNLOAD_FILE_FIELD_CATEGORY_ID_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_CATEGORY_ID_DESC"  multiple="true" size="5" />
+		-->
+			
+			<field name="tags" type="PhocaDownloadTagsModule" default="0" label="MOD_PHOCADOWNLOAD_FILE_FIELD_TAG_ID_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_TAG_ID_DESC"  multiple="true" size="5" />
+			
+
+            <field name="file_ordering" type="list" default="6" label="MOD_PHOCADOWNLOAD_FILE_FIELD_FILE_ORDERING_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_FILE_ORDERING_DESC">
+                <option value="1">MOD_PHOCADOWNLOAD_FILE_FIELD_FILE_ORDERING_OPTION_ORDERING_ASC</option>
+                <option value="2">MOD_PHOCADOWNLOAD_FILE_FIELD_FILE_ORDERING_OPTION_ORDERING_DESC</option>
+                <option value="3">MOD_PHOCADOWNLOAD_FILE_FIELD_FILE_ORDERING_OPTION_TITLE_ASC</option>
+                <option value="4">MOD_PHOCADOWNLOAD_FILE_FIELD_FILE_ORDERING_OPTION_TITLE_DESC</option>
+                <option value="5">MOD_PHOCADOWNLOAD_FILE_FIELD_FILE_ORDERING_OPTION_DATE_ASC</option>
+                <option value="6">MOD_PHOCADOWNLOAD_FILE_FIELD_FILE_ORDERING_OPTION_DATE_DESC</option>
+                <option value="7">MOD_PHOCADOWNLOAD_FILE_FIELD_FILE_ORDERING_OPTION_ID_ASC</option>
+                <option value="8">MOD_PHOCADOWNLOAD_FILE_FIELD_FILE_ORDERING_OPTION_ID_DESC</option>
+                <option value="9">MOD_PHOCADOWNLOAD_FILE_FIELD_FILE_ORDERING_OPTION_HITS_ASC</option>
+                <option value="10">MOD_PHOCADOWNLOAD_FILE_FIELD_FILE_ORDERING_OPTION_HITS_DESC</option>
+            </field>
+
+            <field name="file_novelty" type="text" size="5" default="0" label="MOD_PHOCADOWNLOAD_FILE_FIELD_DAYS_OF_NOVELTY_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_DAYS_OF_NOVELTY_DESC" />
+            
+            <field name="file_count" type="text" size="5" default="5" label="MOD_PHOCADOWNLOAD_FILE_FIELD_FILE_COUNT_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_FILE_COUNT_DESC" />
+
+
+            <field name="phocahead2" type="phocahead" default="MOD_PHOCADOWNLOAD_FILE_CONFIG_FILE_LIST_LABEL" label="" description=""/>
+
+            <field name="display_file_title" type="list" default="0" label="MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_FILE_TITLE_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_FILE_TITLE_DESC">
+                <option value="0">MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_FILE_TITLE_OPTION_TITLE</option>
+                <option value="1">MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_FILE_TITLE_OPTION_BOTH</option>
+                <option value="2">MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_FILE_TITLE_OPTION_NAME</option>
+            </field>
+
+            <field name="display_file_icon" type="list" default="1" label="MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_FILE_ICON_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_FILE_ICON_DESC">
+                <option value="0">MOD_PHOCADOWNLOAD_FILE_NO</option>
+                <option value="1">MOD_PHOCADOWNLOAD_FILE_YES</option>
+            </field>
+
+            <field name="file_icon_size" type="list" default="16" label="MOD_PHOCADOWNLOAD_FILE_FIELD_FILE_ICON_SIZE_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_FILE_ICON_SIZE_DESC">
+                <option value="16">16px</option>
+                <option value="32">32px</option>
+                <option value="48">48px</option>
+                <option value="64">64px</option>
+            </field>
+
+            <field name="display_new" default="0" size="5" type="text" label="MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_NEW_ICON_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_NEW_ICON_DESC" />
+            <field name="display_hot" default="0" size="5" type="text" label="MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_HOT_ICON_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_HOT_ICON_DESC" />
+
+            <field name="display_icon1" type="list" default="0" label="MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_SPECIAL_ICON_1_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_SPECIAL_ICON_1_DESC">
+                <option value="0">MOD_PHOCADOWNLOAD_FILE_NO</option>
+                <option value="1">MOD_PHOCADOWNLOAD_FILE_YES</option>
+            </field>
+            <field name="display_icon2" type="list" default="0" label="MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_SPECIAL_ICON_2_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_SPECIAL_ICON_2_DESC">
+                <option value="0">MOD_PHOCADOWNLOAD_FILE_NO</option>
+                <option value="1">MOD_PHOCADOWNLOAD_FILE_YES</option>
+            </field>
+
+            <field name="display_cat_info" type="list" default="0" label="MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_CATEGORY_INFO_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_CATEGORY_INFO_DESC">
+                <option value="0">MOD_PHOCADOWNLOAD_FILE_NO</option>
+                <option value="1">MOD_PHOCADOWNLOAD_FILE_YES</option>
+            </field>
+
+            <field name="link_to_file" type="list" default="0" label="MOD_PHOCADOWNLOAD_FILE_FIELD_LINK_TO_FILE_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_LINK_TO_FILE_DESC">
+                <option value="0">MOD_PHOCADOWNLOAD_FILE_NO</option>
+                <option value="1">MOD_PHOCADOWNLOAD_FILE_YES</option>
+                <option value="2">MOD_PHOCADOWNLOAD_FILE_FIELD_LINK_TO_FILE_OPTION_FILE_VIEW</option>
+            </field>
+
+            <field name="display_description" type="list" default="0" label="MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_DESCRIPTION_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_DESCRIPTION_DESC">
+                <option value="0">MOD_PHOCADOWNLOAD_FILE_NO</option>
+                <option value="1">MOD_PHOCADOWNLOAD_FILE_YES</option>
+            </field>
+            <field name="description_characters" type="text" size="5" default="200" label="MOD_PHOCADOWNLOAD_FILE_FIELD_DESCRPTION_CHARS_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_DESCRPTION_CHARS_DESC" />
+
+            <field name="show_hits" type="list" default="0" label="MOD_PHOCADOWNLOAD_FILE_FIELD_SHOW_HITS_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_SHOW_HITS_DESC">
+                <option value="0">MOD_PHOCADOWNLOAD_FILE_NO</option>
+                <option value="1">MOD_PHOCADOWNLOAD_FILE_YES</option>
+            </field>
+
+            <field name="display_date_type_file" type="list" default="0" label="MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_DATE_TYPE_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_DATE_TYPE_DESC">
+                    <option value="0">MOD_PHOCADOWNLOAD_FILE_DATE_HIDE</option>
+                    <option value="1">MOD_PHOCADOWNLOAD_FILE_DATE_DATABASE_TIME</option>
+                    <option value="2">MOD_PHOCADOWNLOAD_FILE_DATE_MODIF_TIME</option>
+                    <option value="3">MOD_PHOCADOWNLOAD_FILE_DATE_CHANGE_TIME</option>
+                    <option value="4">MOD_PHOCADOWNLOAD_FILE_DATE_ACCESS_TIME</option>
+                </field>
+
+            <field name="phocahead3" type="phocahead" default="MOD_PHOCADOWNLOAD_FILE_CONFIG_FILE_FEED_LABEL" label="" description=""/>
+
+            <field name="feed_link_title" type="text" default="" label="MOD_PHOCADOWNLOAD_FILE_FIELD_FEED_LINK_TITLE" description="MOD_PHOCADOWNLOAD_FILE_FIELD_FEED_LINK_DESC" />
+            <field name="feed_title" type="text" default="" label="MOD_PHOCADOWNLOAD_FILE_FIELD_FEED_TITLE_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_FEED_TITLE_DESC" />
+
+            <field name="feed_format" type="list" default="rss" label="MOD_PHOCADOWNLOAD_FILE_FIELD_FEED_FORMAT_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_FEED_FORMAT_DESC">
+                <option value="rss">MOD_PHOCADOWNLOAD_FILE_FIELD_FEED_FORMAT_OPTION_RSS</option>
+                <option value="atom">MOD_PHOCADOWNLOAD_FILE_FIELD_FEED_FORMAT_OPTION_ATOM</option>
+            </field>
+            <field name="display_date_type" type="list" default="0" label="MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_DATE_TYPE_LABEL" description="MOD_PHOCADOWNLOAD_FILE_FIELD_DISPLAY_DATE_TYPE_DESC">
+                    <option value="0">MOD_PHOCADOWNLOAD_FILE_DATE_DATABASE_TIME</option>
+                    <option value="1">MOD_PHOCADOWNLOAD_FILE_DATE_MODIF_TIME</option>
+                    <option value="2">MOD_PHOCADOWNLOAD_FILE_DATE_CHANGE_TIME</option>
+                    <option value="3">MOD_PHOCADOWNLOAD_FILE_DATE_ACCESS_TIME</option>
+            </field>
+
+            <field name="phocahead4" type="phocahead" default="MOD_PHOCADOWNLOAD_FILE_CONFIG_MODULE_SETTINGS_LABEL" label="" description=""/>		
+
+            <field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+            <field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+                <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+            </field>
+		
+        </fieldset>
+        </fields>
+    </config>
+</extension>

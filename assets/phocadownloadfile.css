@@ -1,0 +1,50 @@
+.pd-mf-title {
+	font-weight: bold;
+}
+.pd-mf-box {
+	padding-top: 5px;
+}
+
+.pd-mf-date, .pd-mf-date16, .pd-mf-date32, .pd-mf-date48, .pd-mf-date64 {
+	font-size: 90%;
+    color: #999999;
+	height: 16px;
+    line-height: 16px;
+	margin-top: 5px;
+	padding-left:20px;
+	background: url('images/icon-date.png') 0px center no-repeat;
+}
+.pd-mf-date16 {
+	margin-left: 20px;
+}
+.pd-mf-date32 {
+	margin-left: 36px;
+}
+.pd-mf-date48 {
+	margin-left: 50px;
+}
+.pd-mf-date64 {
+	margin-left: 68px;
+}
+
+.pd-mf-desc {
+	color: #777;
+	padding-left: 20px;
+}
+
+.phoca-dl-file-box-mod .pd-mf-box {
+    clear: both;
+}
+.phoca-dl-file-box-mod .pdfile .pd-float {
+   
+    margin: 0;
+}
+.phoca-dl-file-box-mod .pd-mf-box span.pd-mf-hits,
+.phoca-dl-file-box-mod .pd-mf-box span.pd-mf-category {
+    font-size: 90%;
+    color: #999999;
+}
+
+
+
+
